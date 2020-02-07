@@ -167,7 +167,7 @@ plot.nCov2019 <- function(x, region="world", chinamap,
         p <- plot_china(x, chinamap, continuous_scale, palette = palette, ...)
         if (label) {
             prov.df <- readRDS(system.file("prov_location.rds", package="nCov2019"))
-            p <- p + geom_text(aes_(~long, ~lat, label=~name), data=prov.df)
+            p <- p + geom_text(aes_(~long, ~lat, label=~name), data=prov.df) + theme(text = element_text(family='STHeitiSC-Light')) 
         }
         return(p)
     }
